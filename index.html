@@ -1,0 +1,739 @@
+<!-- Nama: Feri Rohmat Setiyono, NIM: 250401010320, Kelas: IF203, Mata Kuliah: Pemrograman Web I -->
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Feri Rohmat Setiyono</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --light-bg: #ecf0f1;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--primary-color);
+        background-color: #f8f9fa;
+        line-height: 1.6;
+      }
+
+      /* Header Section */
+      .header-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 40px 0;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-section h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .header-section p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        margin-bottom: 15px;
+      }
+
+      .contact-info {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 8px;
+      }
+
+      .contact-item i {
+        margin-right: 8px;
+        color: #ffd700;
+      }
+
+      /* Foto Profil */
+      .profile-photo {
+        border: 4px solid white;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+      }
+
+      /* Section Styling */
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-top: 35px;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--secondary-color);
+        display: inline-block;
+      }
+
+      /* Content Card */
+      .content-card {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 25px;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      /* Tabel */
+      .table {
+        background-color: white;
+      }
+
+      .table thead {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .table tbody tr:hover {
+        background-color: var(--light-bg);
+      }
+
+      /* Skills Section */
+      .skill-category {
+        margin-bottom: 20px;
+      }
+
+      .skill-category h5 {
+        color: var(--secondary-color);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .skill-badge {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 25px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-badge:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Gambar Skills */
+      .skill-image {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin: 10px;
+        padding: 10px;
+        background-color: var(--light-bg);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .skill-image:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      /* List Styling */
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+        line-height: 1.8;
+      }
+
+      /* Links Styling */
+      a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
+      }
+
+      .social-links {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 15px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .social-link-btn:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Text Formatting */
+      .emphasize-bold {
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .emphasize-italic {
+        font-style: italic;
+        color: var(--secondary-color);
+      }
+
+      .emphasize-underline {
+        text-decoration: underline;
+        text-decoration-color: var(--accent-color);
+        text-underline-offset: 3px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-section h1 {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .contact-item {
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER SECTION ===== -->
+    <div class="header-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center text-md-start">
+            <img
+              src="WhatsApp Image 2026-06-14 at 09.42.00.jpeg"
+              alt="Foto Profil Feri Rohmat Setiyono"
+              class="profile-photo"
+            />
+          </div>
+          <div class="col-md-9">
+            <h1><i class="fas fa-user-circle"></i> Feri Rohmat Setiyono</h1>
+            <p class="emphasize-italic">
+              Mahasiswa Informatika | Web Developer | Problem Solver
+            </p>
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-id-card"></i> NIM: 250401010320
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i> 089672326400
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:ferisetiyono19@gmail.com" style="color: white"
+                  >ferisetiyono19@gmail.com</a
+                >
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i> Rembang, Jawa Tengah
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="container">
+      <!-- ===== DESKRIPSI DIRI ===== -->
+      <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-user"></i> Tentang Saya</h2>
+
+        <div class="content-card">
+          <p>
+            Saya adalah mahasiswa Program Studi
+            <b class="emphasize-bold">Informatika</b> yang memiliki minat dalam
+            bidang
+            <b class="emphasize-bold"
+              >teknologi informasi, pemrograman, dan pengembangan sistem
+              komputer</b
+            >. Saat ini saya sedang menempuh pendidikan melalui program
+            <b class="emphasize-bold"
+              >Pembelajaran Jarak Jauh (PJJ) Informatika</b
+            >. Saya memiliki semangat untuk terus belajar hal-hal baru, terutama
+            yang berkaitan dengan teknologi dan penerapannya dalam kehidupan
+            sehari-hari.
+          </p>
+
+          <p>
+            Selain aktif dalam perkuliahan, saya juga memiliki pengalaman
+            bekerja di lingkungan manufaktur sehingga terbiasa dengan proses
+            produksi, <u class="emphasize-underline">pemecahan masalah</u>, dan
+            <i class="emphasize-italic">kerja sama tim</i>. Saya berusaha untuk
+            selalu mengembangkan kemampuan teknis maupun kemampuan komunikasi
+            agar dapat menjadi pribadi yang lebih kompeten dan profesional di
+            masa depan.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== VISI & MISI ===== -->
+      <section class="mb-5">
+        <h2 class="section-title">
+          <i class="fas fa-bullseye"></i> Visi & Misi
+        </h2>
+
+        <div class="content-card">
+          <h4 style="color: var(--secondary-color); margin-bottom: 15px">
+            <i class="fas fa-eye"></i> Visi
+          </h4>
+          <p class="mb-4">
+            Menjadi seorang
+            <b class="emphasize-bold"
+              >profesional di bidang teknologi informasi</b
+            >
+            yang mampu memberikan solusi melalui pemanfaatan teknologi secara
+            efektif dan inovatif.
+          </p>
+
+          <h4 style="color: var(--secondary-color); margin-bottom: 15px">
+            <i class="fas fa-flag"></i> Misi
+          </h4>
+          <ol>
+            <li>
+              Menyelesaikan pendidikan di bidang Informatika dengan hasil yang
+              baik
+            </li>
+            <li>
+              Mengembangkan kemampuan pemrograman dan pengelolaan sistem
+              informasi
+            </li>
+            <li>Meningkatkan kemampuan problem solving dan kerja sama tim</li>
+            <li>
+              Mengikuti perkembangan teknologi untuk mendukung karier di masa
+              depan
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== PENDIDIKAN ===== -->
+      <section class="mb-5">
+        <h2 class="section-title">
+          <i class="fas fa-graduation-cap"></i> Riwayat Pendidikan
+        </h2>
+
+        <div class="content-card">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th><i class="fas fa-graduation-cap"></i> Jenjang</th>
+                <th><i class="fas fa-calendar"></i> Tahun</th>
+                <th><i class="fas fa-school"></i> Nama Sekolah/Universitas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sekolah Dasar</td>
+                <td>2015</td>
+                <td>SD N Sumberejo</td>
+              </tr>
+              <tr>
+                <td>Sekolah Menengah Pertama</td>
+                <td>2018</td>
+                <td>SMPN 1 Pamotan</td>
+              </tr>
+              <tr>
+                <td>Sekolah Menengah Kejuruan</td>
+                <td>2021</td>
+                <td>SMKN 1 Sedan</td>
+              </tr>
+              <tr>
+                <td><b>Universitas (Masih Aktif)</b></td>
+                <td><b>2026-Sekarang</b></td>
+                <td>
+                  <b
+                    >Program Studi Informatika (PJJ) - Universitas Siber Asia</b
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== PENGALAMAN KERJA ===== -->
+      <section class="mb-5">
+        <h2 class="section-title">
+          <i class="fas fa-briefcase"></i> Pengalaman Kerja
+        </h2>
+
+        <div class="content-card">
+          <h5>
+            <i class="fas fa-cogs"></i> Operator Produksi - PT Astra Daihatsu
+            Motor
+          </h5>
+          <p style="color: #7f8c8d; font-size: 0.95rem; margin-bottom: 10px">
+            <i class="fas fa-clock"></i> Durasi: 2 Tahun
+          </p>
+          <p class="mb-3">
+            <b class="emphasize-bold">Posisi:</b> Operator Welding
+          </p>
+          <ul style="margin-bottom: 30px">
+            <li>Mengoperasikan mesin produksi dengan presisi tinggi</li>
+            <li>Melakukan pengecekan kualitas produk secara berkala</li>
+            <li>Memastikan proses produksi berjalan sesuai standar industri</li>
+            <li>
+              Membantu proses troubleshooting sederhana pada mesin produksi
+            </li>
+          </ul>
+
+          <hr />
+
+          <h5>
+            <i class="fas fa-cogs"></i> Operator Produksi - PT Astra Juoku
+            Indonesia
+          </h5>
+          <p style="color: #7f8c8d; font-size: 0.95rem; margin-bottom: 10px">
+            <i class="fas fa-clock"></i> Durasi: Masih Aktif (Hingga Saat Ini)
+          </p>
+          <p class="mb-3">
+            <b class="emphasize-bold">Posisi:</b> Operator Injection
+          </p>
+          <ul>
+            <li>
+              Mengoperasikan mesin produksi dengan standar kualitas tinggi
+            </li>
+            <li>Melakukan pengecekan kualitas produk sesuai spesifikasi</li>
+            <li>
+              Memastikan proses produksi berjalan sesuai standar perusahaan
+            </li>
+            <li>Membantu proses troubleshooting dan maintenance mesin</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== KEAHLIAN / SKILLS ===== -->
+      <section class="mb-5">
+        <h2 class="section-title">
+          <i class="fas fa-star"></i> Keahlian (Skills)
+        </h2>
+
+        <div class="content-card">
+          <!-- Bahasa Pemrograman -->
+          <div class="skill-category">
+            <h5><i class="fas fa-code"></i> Bahasa Pemrograman</h5>
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">JavaScript</span>
+          </div>
+
+          <!-- Tools/Software & Keahlian Teknis -->
+          <div class="skill-category">
+            <h5><i class="fas fa-tools"></i> Tools & Software</h5>
+            <span class="skill-badge">Microsoft Word</span>
+            <span class="skill-badge">Microsoft PowerPoint</span>
+            <span class="skill-badge">Microsoft Excel</span>
+            <span class="skill-badge">Visual Studio Code</span>
+          </div>
+
+          <!-- Keahlian Teknis Manufaktur -->
+          <div class="skill-category">
+            <h5><i class="fas fa-industry"></i> Keahlian Teknis</h5>
+            <span class="skill-badge">Welder</span>
+            <span class="skill-badge">Injection</span>
+            <span class="skill-badge">Quality Control</span>
+            <span class="skill-badge">Troubleshooting</span>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-category">
+            <h5><i class="fas fa-handshake"></i> Soft Skills</h5>
+            <span class="skill-badge">Problem Solving</span>
+            <span class="skill-badge">Kerja Sama Tim</span>
+            <span class="skill-badge">Komunikasi</span>
+            <span class="skill-badge">Manajemen Waktu</span>
+            <span class="skill-badge">Pembelajaran Mandiri</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== HOBI & MINAT ===== -->
+      <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-heart"></i> Hobi & Minat</h2>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="content-card">
+              <h5 style="color: var(--secondary-color); margin-bottom: 15px">
+                <i class="fas fa-gamepad"></i> Hobi
+              </h5>
+              <ul>
+                <li>Belajar teknologi dan komputer</li>
+                <li>Menonton konten edukasi teknologi</li>
+                <li>Bermain game</li>
+                <li>Membaca informasi seputar IT</li>
+                <li>Bermain bulu tangkis</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="content-card">
+              <h5 style="color: var(--secondary-color); margin-bottom: 15px">
+                <i class="fas fa-lightbulb"></i> Kegiatan yang Disukai
+              </h5>
+              <ul>
+                <li>Belajar hal baru terkait teknologi</li>
+                <li>Mengembangkan kemampuan di bidang Informatika</li>
+                <li>Bermain bulu tangkis</li>
+                <li>Belajar bahasa Inggris</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar Hobi & Minat -->
+        <div class="content-card" style="margin-top: 25px">
+          <h5
+            style="
+              color: var(--secondary-color);
+              margin-bottom: 20px;
+              text-align: center;
+            "
+          >
+            <i class="fas fa-images"></i> Gambar Hobi & Minat
+          </h5>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 20px;
+            "
+          >
+            <div style="text-align: center">
+              <img
+                src="komputer.jpeg"
+                alt="Komputer"
+                class="skill-image"
+                title="Teknologi Komputer"
+                style="width: 100px; height: 100px"
+              />
+              <p
+                style="
+                  margin-top: 10px;
+                  font-size: 0.9rem;
+                  color: var(--primary-color);
+                "
+              >
+                Teknologi Komputer
+              </p>
+            </div>
+            <div style="text-align: center">
+              <img
+                src="badmintom.jpeg"
+                alt="Badminton"
+                class="skill-image"
+                title="Bulu Tangkis"
+                style="width: 100px; height: 100px"
+              />
+              <p
+                style="
+                  margin-top: 10px;
+                  font-size: 0.9rem;
+                  color: var(--primary-color);
+                "
+              >
+                Bulu Tangkis
+              </p>
+            </div>
+            <div style="text-align: center">
+              <img
+                src="game.jpeg"
+                alt="Game"
+                class="skill-image"
+                title="Gaming"
+                style="width: 100px; height: 100px"
+              />
+              <p
+                style="
+                  margin-top: 10px;
+                  font-size: 0.9rem;
+                  color: var(--primary-color);
+                "
+              >
+                Gaming
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== LINK & MEDIA SOSIAL ===== -->
+      <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-link"></i> Hubungi Saya</h2>
+
+        <div class="content-card">
+          <p style="margin-bottom: 20px">
+            Terhubung dengan saya melalui media sosial dan platform coding
+            berikut:
+          </p>
+
+          <div class="social-links">
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/feri-setiyono-746256357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              class="social-link-btn"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/freryy1009?igsh=YjQ5ZmNtNmU2enY5&utm_source=qr"
+              class="social-link-btn"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/"
+              class="social-link-btn"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ALAMAT LENGKAP ===== -->
+      <section class="mb-5">
+        <h2 class="section-title">
+          <i class="fas fa-map-marker-alt"></i> Informasi Lengkap
+        </h2>
+
+        <div class="content-card">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td><b>Nama Lengkap</b></td>
+                <td>Feri Rohmat Setiyono</td>
+              </tr>
+              <tr>
+                <td><b>NIM</b></td>
+                <td>250401010320</td>
+              </tr>
+              <tr>
+                <td><b>Tempat Lahir</b></td>
+                <td>Rembang</td>
+              </tr>
+              <tr>
+                <td><b>Tanggal Lahir</b></td>
+                <td>19 Maret 2003</td>
+              </tr>
+              <tr>
+                <td><b>Alamat</b></td>
+                <td>
+                  Sumberejo, RT002 RW001 Kec. Pamotan Kab. Rembang Jawa Tengah
+                </td>
+              </tr>
+              <tr>
+                <td><b>No. Telepon</b></td>
+                <td><a href="tel:089672326400">089672326400</a></td>
+              </tr>
+              <tr>
+                <td><b>Email</b></td>
+                <td>
+                  <a href="mailto:ferisetiyono19@gmail.com"
+                    >ferisetiyono19@gmail.com</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container">
+        <p style="margin-bottom: 8px">
+          <i class="fas fa-copyright"></i> 2026 Feri Rohmat Setiyono
+        </p>
+        <p style="font-size: 0.9rem; opacity: 0.8">
+          Program Studi Informatika | Pembelajaran Jarak Jauh | Universitas
+          Siber Asia
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
